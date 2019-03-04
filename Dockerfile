@@ -7,7 +7,7 @@ RUN apt-get update && \
         curl \
         libcurl4-openssl-dev \
         openjdk-8-jdk \
-        texlive-latex-base \
+        texlive-full \
 	expat libexpat1-dev zlib1g-dev \ 
         pandoc \
         xzdec
@@ -16,7 +16,7 @@ RUN apt-get update && \
 # COPY texlive.tar.gzaa /texlive.tar.gzaa
 # COPY texlive.tar.gzab /texlive.tar.gzab
 # RUN cd / && cat x* | tar -xvzf -
-RUN cd / && wget https://www.dropbox.com/s/xrtgsnzkvxhwvap/texlive.tar.gz?dl=0 && tar -xvzf texlive.tar.gz
+#RUN cd / && wget https://www.dropbox.com/s/xrtgsnzkvxhwvap/texlive.tar.gz?dl=0 && tar -xvzf texlive.tar.gz
 
 RUN Rscript -e 'install.packages("webutils")' && \
         Rscript -e 'install.packages("jug")' && \
